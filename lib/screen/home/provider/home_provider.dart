@@ -1,16 +1,16 @@
+import 'dart:async';
+
 import 'package:covid/screen/home/model/home_model.dart';
 import 'package:covid/utils/helper/api_helper.dart';
 import 'package:flutter/material.dart';
 
 class HomeProvider with ChangeNotifier {
-  HomeModel? model;
+  Future<HomeModel?>? model;
 
-  Future<void> getCountryApi() async {
+  void getCountryApi() {
     ApiHelper helper = ApiHelper();
-    model = await helper.getCountryAPI();
+    model = helper.getCountryAPI();
 
     notifyListeners();
-
-
   }
 }

@@ -1,5 +1,3 @@
-import 'package:http/http.dart';
-
 class DetailModel {
   List<ResponseModel>? responseList = [];
 

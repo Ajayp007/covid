@@ -1,13 +1,15 @@
+import 'dart:async';
+
 import 'package:covid/screen/detail/model/detail_model.dart';
 import 'package:covid/utils/helper/api_helper.dart';
 import 'package:flutter/material.dart';
 
 class DetailProvider with ChangeNotifier {
-  DetailModel? model;
+  Future<DetailModel?>? model;
 
-  Future<void> getCountryWiseData() async {
+  void getCountryWiseData() {
     ApiHelper helper = ApiHelper();
-    model = await helper.getCovidAPI();
+    model = helper.getCovidAPI();
     notifyListeners();
   }
 }
